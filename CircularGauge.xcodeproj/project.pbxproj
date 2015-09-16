@@ -14,7 +14,6 @@
 		6982C5A41BA5B57C00BC9239 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6982C5A21BA5B57C00BC9239 /* LaunchScreen.xib */; };
 		6982C5B01BA5B57C00BC9239 /* CircularGaugeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6982C5AF1BA5B57C00BC9239 /* CircularGaugeTests.swift */; };
 		6982C5BA1BA5B63D00BC9239 /* CircularGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6982C5B91BA5B63D00BC9239 /* CircularGaugeView.swift */; };
-		6982C5BC1BA96EC300BC9239 /* SampleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6982C5BB1BA96EC300BC9239 /* SampleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +38,6 @@
 		6982C5AE1BA5B57C00BC9239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6982C5AF1BA5B57C00BC9239 /* CircularGaugeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularGaugeTests.swift; sourceTree = "<group>"; };
 		6982C5B91BA5B63D00BC9239 /* CircularGaugeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularGaugeView.swift; sourceTree = "<group>"; };
-		6982C5BB1BA96EC300BC9239 /* SampleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +79,6 @@
 		6982C5961BA5B57C00BC9239 /* CircularGauge */ = {
 			isa = PBXGroup;
 			children = (
-				6982C5BB1BA96EC300BC9239 /* SampleButton.swift */,
 				6982C5B91BA5B63D00BC9239 /* CircularGaugeView.swift */,
 				6982C59B1BA5B57C00BC9239 /* ViewController.swift */,
 				6982C5991BA5B57C00BC9239 /* AppDelegate.swift */,
@@ -221,7 +218,6 @@
 				6982C59C1BA5B57C00BC9239 /* ViewController.swift in Sources */,
 				6982C5BA1BA5B63D00BC9239 /* CircularGaugeView.swift in Sources */,
 				6982C59A1BA5B57C00BC9239 /* AppDelegate.swift in Sources */,
-				6982C5BC1BA96EC300BC9239 /* SampleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
