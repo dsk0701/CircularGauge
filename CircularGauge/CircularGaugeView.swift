@@ -15,21 +15,23 @@ class CircularGaugeView: UIView {
     var lineWidth: CGFloat = 5.0
     var lineColor: UIColor = UIColor.orangeColor()
     var fillColor: UIColor = UIColor.clearColor()
+    var bgLineColor: UIColor = UIColor(red: 0.90, green: 0.90, blue: 0.87, alpha: 1.0)
     var percentage = 1.0    // 0 〜 1
     var label: UILabel = UILabel()
     var timer: NSTimer?
 
     private let percentageFormat = "%.0f%%"
     private var circle: CAShapeLayer = CAShapeLayer()
+    private var bgCircle: CAShapeLayer = CAShapeLayer()
     private var animation: CABasicAnimation?
     private var progress = 0.01
 
-    override func animationDidStart(anim: CAAnimation!) {
+    override func animationDidStart(anim: CAAnimation) {
 
         timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "updateLabel", userInfo: nil, repeats: true)
     }
 
-    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         timer?.invalidate()
         drawLabel(percentage)
     }
@@ -63,23 +65,29 @@ class CircularGaugeView: UIView {
 
         // 円の描画path設定
         circle.path = UIBezierPath(roundedRect: CGRectMake(0, 0, diameter, diameter), cornerRadius: diameter / 2).CGPath
+        bgCircle.path = UIBezierPath(roundedRect: CGRectMake(0, 0, diameter, diameter), cornerRadius: diameter / 2).CGPath
 
         // 円のポジション設定(枠線の太さ分位置を調整)
         circle.position = CGPointMake(lineWidth / 2, lineWidth / 2)
+        bgCircle.position = CGPointMake(lineWidth / 2, lineWidth / 2)
 
         // 塗りの色を設定
         circle.fillColor = fillColor.CGColor
+        bgCircle.fillColor = UIColor.clearColor().CGColor
 
         // 線の色を設定
         circle.strokeColor = lineColor.CGColor
+        bgCircle.strokeColor = bgLineColor.CGColor
 
         // 線の幅を設定
         circle.lineWidth = lineWidth
+        bgCircle.lineWidth = lineWidth
 
         // 該当のUIViewのlayerにsublayerとしてCALayerを追加
         animation = createAnimation()
-        circle.addAnimation(animation, forKey: "drawAnimation")
+        circle.addAnimation(animation!, forKey: "drawAnimation")
 
+        self.layer.addSublayer(bgCircle)
         self.layer.addSublayer(circle)
     }
 

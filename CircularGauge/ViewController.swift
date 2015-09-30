@@ -20,6 +20,25 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
+        drawGaugeViews()
+    }
+
+    @IBAction func onTapDrawButton(sender: UIButton) {
+        clearGaugeViews()
+        drawGaugeViews()
+    }
+
+    private func clearGaugeViews() {
+
+        for view in self.view.subviews {
+            if view is CircularGaugeView {
+                view.removeFromSuperview()
+            }
+        }
+    }
+
+    private func drawGaugeViews() {
+
         let frame = CGRectMake(0, 0, 80, 80)
 
         let cgv1 = CircularGaugeView(frame: frame)
@@ -42,10 +61,6 @@ class ViewController: UIViewController {
         cgv3.lineColor = UIColor.purpleColor()
         cgv3.draw()
         self.view.addSubview(cgv3)
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
